@@ -25,8 +25,8 @@ export const SIDE: Side = RAW_SIDE === "right" ? "right" : "left";
 const CONFIGS: Record<Side, SiteConfig> = {
   left: {
     side: "left",
-    brand: "정치 좌편향 뉴스 모음",
-    tagline: "진보 성향 매체의 정치 기사를 한곳에",
+    brand: "newjam",
+    tagline: "진보 성향 매체의 정치 기사를 한곳에 — 좌편향 뉴스 모음",
     accent: "#1d4ed8",
     accentSoft: "#eff6ff",
     extremeLabel: "강성 / 극좌 추정 기사",
@@ -35,8 +35,8 @@ const CONFIGS: Record<Side, SiteConfig> = {
   },
   right: {
     side: "right",
-    brand: "정치 우편향 뉴스 모음",
-    tagline: "보수 성향 매체의 정치 기사를 한곳에",
+    brand: "yoonagain",
+    tagline: "보수 성향 매체의 정치 기사를 한곳에 — 우편향 뉴스 모음",
     accent: "#b91c1c",
     accentSoft: "#fef2f2",
     extremeLabel: "강성 / 극우 추정 기사",

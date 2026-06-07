@@ -151,20 +151,6 @@ a {
   font-size: 14px;
 }
 
-.sister-banner {
-  margin: 36px 0 8px;
-  padding: 16px;
-  border: 1px dashed var(--accent);
-  border-radius: 10px;
-  text-align: center;
-  font-weight: 700;
-  color: var(--accent);
-}
-
-.sister-banner:hover {
-  background: var(--accent-soft);
-}
-
 .footer {
   margin-top: 40px;
   padding-top: 16px;

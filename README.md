@@ -18,7 +18,7 @@ policy/
 └── web/            ← Next.js 앱 (좌/우 두 사이트가 같은 코드베이스를 공유)
     ├── lib/site.ts     ← NEXT_PUBLIC_SIDE 값으로 브랜드/색상/필터 분기
     ├── lib/articles.ts ← articles.json 로딩 + 타입
-    └── app/page.tsx    ← 메인 페이지 (해당 side 기사 + 강성 섹션 + 자매 사이트 링크)
+    └── app/page.tsx    ← 메인 페이지 (해당 side 기사 + 강성 섹션)
 ```
 
 ## 분류 방식 (저작권 안전 + API 비용 없음)
@@ -52,10 +52,10 @@ cd policy/web
 npm install
 
 # 좌측 사이트로 보기
-NEXT_PUBLIC_SIDE=left  NEXT_PUBLIC_SISTER_URL=https://<우측-배포-URL> npm run dev
+NEXT_PUBLIC_SIDE=left  npm run dev
 
 # 우측 사이트로 보기 (다른 포트 권장: PORT=3001 npm run dev)
-NEXT_PUBLIC_SIDE=right NEXT_PUBLIC_SISTER_URL=https://<좌측-배포-URL> npm run dev
+NEXT_PUBLIC_SIDE=right npm run dev
 ```
 
 (PowerShell에서는 `$env:NEXT_PUBLIC_SIDE="left"; npm run dev` 형태로 설정)
@@ -69,10 +69,9 @@ NEXT_PUBLIC_SIDE=right NEXT_PUBLIC_SISTER_URL=https://<좌측-배포-URL> npm ru
 |---|---|---|
 | Root Directory | `policy/web` | `policy/web` |
 | `NEXT_PUBLIC_SIDE` | `left` | `right` |
-| `NEXT_PUBLIC_SISTER_URL` | (B의 배포 URL) | (A의 배포 URL) |
 
-배포 후 서로의 `NEXT_PUBLIC_SISTER_URL`을 상대방 실제 URL로 갱신해 주세요
-(자매 사이트 링크 배너가 정상 동작하려면 필요).
+두 사이트는 서로를 언급하거나 링크하지 않으며, 완전히 독립된 매체로 보이도록
+의도적으로 분리되어 있습니다.
 
 ## 데이터 자동 갱신
 

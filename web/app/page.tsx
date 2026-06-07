@@ -74,10 +74,6 @@ export default async function Home() {
           )}
         </section>
 
-        <a className="sister-banner" href={site.sisterUrl} target="_blank" rel="noopener noreferrer">
-          {site.sisterLabel}
-        </a>
-
         <footer className="footer">
           <p>
             마지막 업데이트:{" "}

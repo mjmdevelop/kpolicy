@@ -2,9 +2,10 @@
 //
 // 같은 코드베이스를 Vercel에 두 번 배포하고, 프로젝트별 환경변수만 다르게
 // 설정하면 "좌(진보) 사이트"와 "우(보수) 사이트" 두 개가 만들어집니다.
+// 두 사이트는 서로를 언급하거나 링크하지 않으며, 완전히 독립된 매체로 노출됩니다.
 //
-//   프로젝트 A: NEXT_PUBLIC_SIDE=left   NEXT_PUBLIC_SISTER_URL=https://<우측사이트>
-//   프로젝트 B: NEXT_PUBLIC_SIDE=right  NEXT_PUBLIC_SISTER_URL=https://<좌측사이트>
+//   프로젝트 A: NEXT_PUBLIC_SIDE=left
+//   프로젝트 B: NEXT_PUBLIC_SIDE=right
 
 export type Side = "left" | "right";
 
@@ -15,8 +16,6 @@ export interface SiteConfig {
   accent: string;       // 메인 강조색
   accentSoft: string;   // 옅은 배경색
   extremeLabel: string; // 극단 섹션 라벨
-  sisterLabel: string;  // 자매 사이트로 가는 안내 문구
-  sisterUrl: string;
 }
 
 const RAW_SIDE = (process.env.NEXT_PUBLIC_SIDE ?? "left").toLowerCase();
@@ -30,8 +29,6 @@ const CONFIGS: Record<Side, SiteConfig> = {
     accent: "#1d4ed8",
     accentSoft: "#eff6ff",
     extremeLabel: "강성 / 극좌 추정 기사",
-    sisterLabel: "보수 성향 기사 모음 보기 →",
-    sisterUrl: process.env.NEXT_PUBLIC_SISTER_URL ?? "#",
   },
   right: {
     side: "right",
@@ -40,8 +37,6 @@ const CONFIGS: Record<Side, SiteConfig> = {
     accent: "#b91c1c",
     accentSoft: "#fef2f2",
     extremeLabel: "강성 / 극우 추정 기사",
-    sisterLabel: "진보 성향 기사 모음 보기 →",
-    sisterUrl: process.env.NEXT_PUBLIC_SISTER_URL ?? "#",
   },
 };
 

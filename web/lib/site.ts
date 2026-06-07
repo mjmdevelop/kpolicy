@@ -35,7 +35,7 @@ const CONFIGS: Record<Side, SiteConfig> = {
   },
   right: {
     side: "right",
-    brand: "yoonagain",
+    brand: "againyoon",
     tagline: "보수 성향 매체의 정치 기사를 한곳에 — 우편향 뉴스 모음",
     accent: "#b91c1c",
     accentSoft: "#fef2f2",
